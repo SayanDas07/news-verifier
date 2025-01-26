@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { AlertCircle, CheckCircle2, Zap, History, Trash2, XCircle } from "lucide-react";
 
-const API_URL = "https://news-verifier.onrender.com";
+const API_URI = "https://news-verifier.onrender.com";
 
 function App() {
   const [newsContent, setNewsContent] = useState("");
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchAccuracy = async () => {
       try {
-        const response = await fetch(`${API_URL}/accuracy`);
+        const response = await fetch(`${API_URI}/accuracy`);
         if (!response.ok) throw new Error("Failed to fetch accuracy");
         const data = await response.json();
         setAccuracy(data.accuracy);
@@ -54,7 +54,7 @@ function App() {
       setResult("");
       setIsLoading(true);
 
-      const response = await fetch(`${API_URL}/predict`, {
+      const response = await fetch(`${API_URI}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: newsContent }),
