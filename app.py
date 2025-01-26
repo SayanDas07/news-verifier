@@ -4,7 +4,7 @@ import pickle
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://news-verifier-kappa.vercel.app/"])
+CORS(app, origins=["https://news-verifier-kappa.vercel.app"])
 
 loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 vectorizer = pickle.load(open('vectorizer.sav', 'rb'))
