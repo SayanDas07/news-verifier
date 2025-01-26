@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { AlertCircle, CheckCircle2, Zap, History, Trash2, XCircle } from "lucide-react";
 
-const API_URL = "http://127.0.0.1:7000";
+const API_URL = "https://news-verifier.onrender.com";
 
 function App() {
   const [newsContent, setNewsContent] = useState("");
